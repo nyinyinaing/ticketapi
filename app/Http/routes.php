@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::resource('tickets', 'TicketCtrl', ['only'=>['index']]);
+
+Route::resource('assignees', 'AssigneeCtrl', ['only'=>['index', 'show']]);
+
+Route::resource('assignees.tickets', 'AssignTicketCtrl', ['only'=>['index', 'update', 'show']]);
